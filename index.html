@@ -83,5 +83,20 @@ footer{
   <span>&copy; 2026 JB Developments</span>
   <span>ABN 45 905 089 621</span>
 </footer>
+<script>
+(() => {
+  const mark = document.querySelector('.mark');
+  if (!mark) return;
+  // After each sweep finishes, wait a random 2-4s then replay it.
+  mark.addEventListener('animationend', () => {
+    setTimeout(() => {
+      mark.style.animation = 'none';
+      void mark.offsetWidth; // force reflow so the animation restarts
+      mark.style.animation = '';
+      mark.style.animationDelay = '0s';
+    }, 2000 + Math.random() * 2000);
+  });
+})();
+</script>
 </body>
 </html>
