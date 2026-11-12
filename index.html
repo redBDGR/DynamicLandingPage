@@ -73,7 +73,11 @@ footer{
 </head>
 <body>
 <main>
-  <h1 class="mark">Maybach</h1>
+  <h1 class="mark"><span id="domain-header"></span></h1>
+  <script>
+    const currentDomain = window.location.hostname
+    docuemnt.getElementById("domain-header").textContent = currentDomain
+  </script>
   <div class="intro">
     <p>A new home for Maybach is being built with care. We'd be glad to hear from you in the meantime.</p>
     <a class="cta" href="mailto:jacob@jbrown.au">Email us</a>
