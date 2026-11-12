@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en-AU">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Maybach</title>
-<meta name="description" content="A new home for Halden is being built with care.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <meta name="description" content="A new home for Halden is being built with care.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#EDE8DF;
@@ -74,13 +74,9 @@ footer{
 <body>
 <main>
   <h1 class="mark"><span id="domain-header"></span></h1>
-  <script>
-    const domainName = window.location.hostname.replace(/^www\./i, "").split(".")[0].toLowerCase()
-    const displayName = domainName.charAt(0).toUpperCase() + domainName.slice(1)
-    document.getElementById("domain-header").textContent = displayName
-  </script>
+
   <div class="intro">
-    <p>A new home for Maybach is being built with care. We'd be glad to hear from you in the meantime.</p>
+    <p>A new home is being built with care. We'd be glad to hear from you in the meantime.</p>
     <a class="cta" href="mailto:jacob@jbrown.au">Email us</a>
   </div>
 </main>
@@ -88,20 +84,26 @@ footer{
   <span>&copy; 2026 JB Developments</span>
   <span>ABN 45 905 089 621</span>
 </footer>
-<script>
-(() => {
-  const mark = document.querySelector('.mark');
-  if (!mark) return;
-  // After each sweep finishes, wait a random 2-4s then replay it.
-  mark.addEventListener('animationend', () => {
-    setTimeout(() => {
-      mark.style.animation = 'none';
-      void mark.offsetWidth; // force reflow so the animation restarts
-      mark.style.animation = '';
-      mark.style.animationDelay = '0s';
-    }, 2000 + Math.random() * 2000);
-  });
-})();
-</script>
+  <script>
+    const domainName = window.location.hostname.replace(/^www\./i, "").split(".")[0].toLowerCase()
+    const displayName = domainName.charAt(0).toUpperCase() + domainName.slice(1)
+    document.getElementById("domain-header").textContent = displayName
+    document.title = displayName
+  </script>
+  <script>
+  (() => {
+    const mark = document.querySelector('.mark');
+    if (!mark) return;
+    // After each sweep finishes, wait a random 2-4s then replay it.
+    mark.addEventListener('animationend', () => {
+      setTimeout(() => {
+        mark.style.animation = 'none';
+        void mark.offsetWidth; // force reflow so the animation restarts
+        mark.style.animation = '';
+        mark.style.animationDelay = '0s';
+      }, 2000 + Math.random() * 2000);
+    });
+  })();
+  </script>
 </body>
 </html>
