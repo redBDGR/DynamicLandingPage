@@ -75,8 +75,9 @@ footer{
 <main>
   <h1 class="mark"><span id="domain-header"></span></h1>
   <script>
-    const currentDomain = window.location.hostname
-    document.getElementById("domain-header").textContent = currentDomain
+    const domainName = window.location.hostname.replace(/^www\./i, "").split(".")[0].toLowerCase()
+    const displayName = domainName.charAt(0).toUpperCase() + domainName.slice(1)
+    document.getElementById("domain-header").textContent = displayName
   </script>
   <div class="intro">
     <p>A new home for Maybach is being built with care. We'd be glad to hear from you in the meantime.</p>
